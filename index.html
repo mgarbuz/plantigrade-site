@@ -1,281 +1,160 @@
 <!DOCTYPE html>
-<html lang="ru" >
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Сайт Михаила Гарбуза</title>
-<style type="text/css">
-a{
-color: #fff;
-text-decoration: none;
-}
-html{
-background: #FFF8CC;
-min-height: 100%;
-font-family: Helvetica;
-display: flex;
-flex-direction: column;
-}
+<meta charset="utf-8" />
+<title>виртуальный музей</title>
+
+
+<style>
 body{
-margin: 0;
-padding: 0 15px;
-display: flex;
-flex-direction: column;
-flex: auto;
-}
-h1{
-margin-top: 0;
-}
-h1, p{
-color: #006064;
-}
-img{
-border: 0;
-}
-.header{
-width: 100%;
-min-width: 460px;
-max-width: 960px;
-margin: 0 auto 30px;
-padding: 30px 0 10px;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-box-sizing: border-box;
-}
-.logo{
-font-size: 1.5rem;
-color: #fff;
-text-decoration: none;
-margin: 5px 0 0 5px;
-justify-content: center;
-align-items: center;
-display: flex;
-flex: none;
-align-items: center;
-background: #839FFF;
-width: 130px;
-height: 50px;
-}
-.nav{
-margin: -5px 0 0 -5px;
-display: flex;
-flex-wrap: wrap;
-}
-.nav-item{
-background: #BDC7FF;
-width: 130px;
-height: 50px;
-font-size: 1.5rem;
-color: #fff;
-text-decoration: none;
-display: flex;
-margin: 5px 0 0 5px;
-justify-content: center;
-align-items: center;
-}
-.sqr{
-height: 300px;
-width: 300px;
-background: #FFDB89;
+  background:#c0c0c0; /* Меняется фон экрана, выбирается здесь */
 }
 
-.main{
-width: 100%;
-min-width: 460px;
-max-width: 960px;
-margin: auto;
-flex: auto;
-box-sizing: border-box;
-}
-.box{
-font-size: 1.25rem;
-line-height: 1.5;
-margin: 0 0 40px -50px;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-}
-.box-base{
-margin-left: 50px;
-flex: 1 0 430px;
-}
-.box-side{
-margin-left: 50px;
-font: none;
-}
-.box-img{
-max-width: 100%;
-height: auto;
-}
-.content{
-margin-bottom: 30px;
-display: flex;
-flex-wrap: wrap;
-}
-.banners{
-flex: 1 1 200px;
-}
-.banner{
-background: #FFDB89;
-width: 100%;
-min-width: 100px;
-min-height: 200px;
-font-size: 3rem;
-color: #fff;
-margin: 0 0 30px 0;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.posts{
-margin: 0 0 30px 30px;
-flex: 1 1 200px;
-}
-.comments{
-margin: 0 0 30px 30px;
-flex: 1 1 200px;
-}
-.comment{
-display: flex;
-}
-.comment-side{
-padding-right: 20px;
-flex: none;
-}
-.comment-base{
-flex: auto;
-}
-.comment-avatar{
-background: #FFA985;
-width: 50px;
-height: 50px;
-}
-.footer{
-background: #FF3366;
-width: 100%;
-max-width: 960px;
-min-width: 460px;
-color: #fff;
-margin: auto;
-padding: 15px;
-box-sizing: border-box;
+#wrapper{ /* Оболочка страницы сайта */
+  width: 900px; /* Меняется ширина страницы */
+  margin: 0 auto;
+  background:#f2e8c9; /* Меняется задний фон страницы */
 }
 
-@media screen and  (max-width: 800px) {
-.banners{
-margin-left: -30px;
-display: flex;
-flex-basis: 100%;
+/* Шапка сайта */
+
+#header{
+position:relative; /* Задаём блоку относительное позиционирование для того, чтобы затем размещать, в нём другие элементы 
+и позиционировать относительно его границ поверх фоновой картинки и заголовка */
+  height: 40px; /* Высота шапки */
+  background-color: #ffffff; /* Фон шапки */
+   margin-bottom: 5px; /* Нижний отступ шапки от остального контента */
+  border-radius: 5px; /* Закругляются углы блока */
+  box-shadow: rgba(0,0,0,0.5) 0px 1px 3px; /* Тень. Визуально приподнимает блок над оболочкой */
 }
-.banner{
-margin-left: 30px;
+img{ /* Фоновая картинка в шапке */
+float: left; /* Разрешаем наплывание других элементов на картинку */
+  margin: -40px 0 0 0;} /* Размещаем картинку в блоке header. 1-я и 3-я цифры - двигаем вверх-вниз, 2-я и 4-я цифры - двигаем вправо-влево */
+h1{ /* Заголовок сайта */
+  margin:0 0 10px 40px; /* Заголовок двигается верх-вправо-вниз-влево. */
+  color:#464451; /* Цвет заголовка */
 }
-.posts{
-margin-left: 0;
+.nomer{ /*Подзаголовок (номер телефона)*/
+  position:absolute; /* Позиционируем абсолютно подзаголовок, относительно границ блока header. Также можно разместить в шапке сайта ещё другие
+  картинки и абзацы поверх фоновой картинки и заголовка */
+  top:5px; /* Двигается вверх-вниз */
+  left:680px; /* Двигается вправо-влево */
+  font-size: 25px; /* Размер букв подзаголовка */
+  font-style:italic; /* Курсив */
+  font-weight:bold; /* Жирный */
+  color:#464451; /* Цвет букв подзаголовка */
 }
+
+/* Сайдбар (колонка справа) */
+
+#sidebar{ /* Блок сайдбара */
+  background-color: #ffffff; /* Фон блока */
+  width: 180px; /* Ширина блока */
+  padding: 10px; /* Отступ текста от краёв */
+  float: right; /* Размещаем блок справа от других элементов, наплывание или обтекание справа). Если делать сайдбар слева, то значение right меняем на left */
+  border-radius: 5px; /* Закругляем углы блока */
+  box-shadow: rgba(0,0,0,0.5) 0px 1px 3px; /* Задаём блоку тень */
 }
-@media screen and  (max-width: 600px) {
-.content{
-display: block;
+.marcer{ /* Галочки маркеры меню */
+  float: left; /* Размещаем слева от текста */
+  margin: 5px 5px 0 0; /* Двигаются вверх-вправо-вниз-влево */
 }
-.banners{
-margin: 0;
-display: block;
+
+/* Контент (статья) */
+
+#content{ /* Блок контента */
+  margin-bottom: 5px; /* Отступ блока статьи от блока подвала */
+  width: 676px; /* Ширина статьи */
+  padding: 10px; /* Отступ текста от краёв блока */
+  background: #ffffff; /* Фон статьи */
+  border-radius: 5px;
+  box-shadow: rgba(0,0,0,0.5) 0px 1px 3px;
 }
-.banner{
-margin-left: 0;
+.left{ /* Картинка в тексте слева */
+  float: left;
+  margin: 30px 7px 7px 7px;
 }
-.posts{
-margin: 0;
+.right{ /* Картинка в тексте справа */
+  float: right;
+  margin: 7px 0 7px 7px;
 }
+/* Подвал */
+
+#footer{ /* Блок подвала */
+  height:40px; /* Высота блока подвала */
+  background-color: #ffffff; /* Фон блока подвала */
+  margin-bottom: 1px; /* Отступ снизу */
+  border-radius: 5px; /* Закруглённые углы */
+  box-shadow: rgba(0,0,0,0.5) 0px 1px 3px; /* Тень блока */
+}
+.clear{ /* Запрет наплывания. Устанавливается для того, чтобы блок контента, при заполнении текстом и изображениями не наплывал на подвал */
+  clear: both;
+}
+  .fon{ /* Номер телефона */
+  float:left; /* Разрешаем другим элементам обтекать абзац справа */
+  margin:20px 0 0 20px;
+}
+.fax{ /* Номер факса */
+  float:left;
+  margin:20px 0 0 60px;
+}
+.mail{ /* Адрес E-mail */
+  float:left;
+ margin:20px 0 0 60px;
 }
 </style>
 </head>
 <body>
-<header class="header">
-<a class="logo">
-LOGO
-</a>
-<nav class="nav">
-<a href="#posts" class="nav-item">Посты</a>
-<a href="#comments" class="nav-item">Комменты</a>
-<a href="#footer" class="nav-item">Подвал</a>
-<a href="#posts" class="nav-item">Посты2</a>
-</nav>
+  <div id="wrapper"> <!--Оболочка страницы-->
+<!--Шапка сайта-->
+    <div id="header">
+<!--Заголовок сайта-->
+     <center>  <h1>Шагающий механизм с ветроприводом</h1></center> 
+    </div>
+<!--Сайдбар-->
+    <div id="sidebar">
+<!--меню-->
+      <h3>На нашем сайте</h3>
+<!--Картинки маркеров меню (галочки)-->
+        <p><img class="marcer" src="http://trueimages.ru/img/99/91/dea39f15.png" width="10" height="10">Мат часть</p>
+        <p><img class="marcer" src="http://trueimages.ru/img/99/91/dea39f15.png" width="10" height="10">Сборка модели</p>
+        <p><img class="marcer" src="http://trueimages.ru/img/99/91/dea39f15.png" width="10" height="10">Об авторах</p>
+<!--Прямая синяя линия-->
+          <hr width="50" color="#037FFC" size="5">
+<!--Общая информация в сайдбаре-->
+      <h3>Другая информация</h3>
+    </div>
+<!--Основной контент (статья)-->
+    <div id="content">
+<!--Картинка слева-->
+      <img class="left" src="логотип института.png" width="40">
+<!--Заголовок статьи-->
+       <center> <h3>Добро пожаловать в виртуальный музей лаборатории навигации и управления НИИ механики МГУ!</h3></center>
+<!--Текст статьи-->
+<center><div class="sketchfab-embed-wrapper"> <iframe title="Plantigrade machine with wind propeller" frameborder="0" 
+allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="640" height="480" src="https://sketchfab.com/models/764577ced29647e1bc979e95040aea80/embed"> </iframe> </div>
+</center>
+<center><p>Здравствуйте уважаемые коллеги!</p></center>
+<p>Меня зовут Михаил Гарбуз, я обучаюсь в аспирантуре механико-математического факультета МГУ. Эта страница является дополнением к моим докладам о 
+шагающем механизме с ветроприводом</p>
+<p></p>
 
-</header>
-<main class="main">
-<div class="box">
-<div class="box-base">
-<h1> Стопоходящая машина 1</h1>
-<p> <div class="sketchfab-embed-wrapper"> <iframe title="Plantigrade machine with wind propeller" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="960" height="720" src="https://sketchfab.com/models/764577ced29647e1bc979e95040aea80/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/plantigrade-machine-with-wind-propeller-764577ced29647e1bc979e95040aea80?utm_medium=embed&utm_campaign=share-popup&utm_content=764577ced29647e1bc979e95040aea80" target="_blank" style="font-weight: bold; color: #1CAAD9;"> Plantigrade machine with wind propeller </a> by <a href="https://sketchfab.com/misha-garbuz?utm_medium=embed&utm_campaign=share-popup&utm_content=764577ced29647e1bc979e95040aea80" target="_blank" style="font-weight: bold; color: #1CAAD9;"> misha-garbuz </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=764577ced29647e1bc979e95040aea80" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
-</p>
-</div>
-<div class="box-side">
-<div class="sqr">
+<!--Картинка справа-->
+      <img class="right" src="plantigrade.jpg"  width="250" alt=""/>
+<p>В первую очередь мне хотелось бы показать Вам трёхмерную модель устройства: она расположена в шапке страницы. Пока что это только чёрно-белая статическая фигура, которую можно
+вращать и приближать, однако же в перспективе появится отображение и цветов, и даже возможность запуска анимации! </p>
+<p>Раздел в правом верхнем углу - своего рода меню. Там хотелось бы написать об исторических фактах (например, мне было интересно узнать, что сборкой "Стопоходящей машины" Чебышёва
+занимался ... Виктор Леопольдович Францен!), продублировать основные теоретические результаты работы, добавить фото/видео материалы и другое.</p>
+<p> А может быть, и до этого не дойдут руки!:)</p>
 
-</div>
-</div>
-</div>
-<div class="content">
-<div class="banners">
-<div class="banner">Баннер 1</div>
-<div class="banner">Баннер 2</div>
-<div class="banner">Баннер 3</div>
-</div>
-<div class="posts"  id="posts">
-<div class="post">
-<h1>Пост #1</h1>
-<p>Концепция маркетинга индуцирует контент. Системный анализ развивает тактический рекламный клаттер. Медиавес поддерживает экспериментальный нишевый проект. Лидерство в продажах допускает эмпирический социальный статус.</p>
-</div>
-<div class="post">
-<h1>Пост #2</h1>
-<p>Департамент маркетинга и продаж реально допускает жизненный цикл продукции. Стоит отметить, что опросная анкета стабилизирует охват аудитории. До недавнего времени считалось, что promotion-кампания изоморфна времени. </p>
-</div>
-<div class="post">
-<h1>Пост #3</h1>
-<p>В соответствии с законом Ципфа, сущность и концепция маркетинговой программы синхронизирует тактический медиамикс, осознав маркетинг как часть производства. Общество потребления сознательно отталкивает презентационный материал.</p>
-</div>
-</div>
-<div class="comments"  id="comments">
-<div class="comment">
-<div class="comment-side">
-<div class="comment-avatar">
-
-</div>
-</div>
-<div class="comment-base">
-<h1 class="comment-title">Комментарий #1</h1>
-<p>Рекламный бриф масштабирует из ряда вон выходящий выставочный стенд. Изменение глобальной стратегии, в рамках сегодняшних воззрений, индуцирует культурный ребрендинг.</p>
-</div>
-</div>
-<div class="comment">
-<div class="comment-side">
-<div class="comment-avatar">
-
-</div>
-</div>
-<div class="comment-base">
-<h1 class="comment-title">Комментарий #2</h1>
-<p>Имидж предприятия, в рамках сегодняшних воззрений, вполне вероятен. Стоит отметить, что имидж версифицирован. Экспертиза выполненного проекта осмысленно программирует из ряда вон выходящий клиентский спрос. </p>
-</div>
-</div>
-<div class="comment">
-<div class="comment-side">
-<div class="comment-avatar">
-
-</div>
-</div>
-<div class="comment-base">
-<h1 class="comment-title">Комментарий #3</h1>
-<p>Представляется логичным, что особенность рекламы нейтрализует потребительский сегмент рынка. Изменение глобальной стратегии редко соответствует рыночным ожиданиям. </p>
-</div>
-</div>
-</div>
-</div>
-</main>
-<footer class="footer"  id="footer">
-Подвал сайта расположен, как это ни странно внизу, здесь можно разместить контакты и другую информацию...
-</footer>
+<iframe id="7e925e64-cbb0-4652-a33c-85b83f9019d9" src="https://www.vectary.com/viewer/v1/?model=7e925e64-cbb0-4652-a33c-85b83f9019d9&env=studio3&turntable=6" frameborder="0" width="100%" height="480"></iframe><!--Запрет наплывания-->
+  <div class="clear"></div>
+<!--Подвал-->
+    <div id="footer">
+	  <p class="mail"><strong><center>Буду рад обратной связи!<br>misha-garbuz@yandex.ru<center></center></strong></p>
+    </div>
+  </div>
 </body>
 </html>
+
+      
